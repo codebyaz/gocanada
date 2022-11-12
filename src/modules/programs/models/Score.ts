@@ -2,7 +2,6 @@ import { Criteria } from "./Criteria";
 import { Program } from "./Program";
 
 type TScoreType = "single" | "married" | "spouse";
-type TLanguageScore = "en" | "fr";
 
 class Score {
     id?: string;
@@ -12,4 +11,4 @@ class Score {
     program: Program | undefined;
 }
 
-export { Score, TScoreType, TLanguageScore };
+export { Score, TScoreType };

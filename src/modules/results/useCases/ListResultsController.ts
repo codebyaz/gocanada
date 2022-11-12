@@ -1,38 +1,19 @@
 
 import { Request, Response } from "express";
 import { Service } from "typedi";
+import { Criteria } from "../../programs/models/Criteria";
+import { TScoreType } from "../../programs/models/Score";
 
-import { Score, TScoreType } from "../../programs/models/Score";
-import { scores as data } from "../../programs/repositories/fixtures/Scores";
+import { ListResultsUseCase } from "./ListResultsUseCase";
 
 @Service()
 class ListResultsController {
-    constructor() { }
+    constructor(private listResultsUseCase: ListResultsUseCase) { }
 
     async handle(request: Request, response: Response) {
         const { status, criteria } = request.query;
-        const scores = await data();
-        const married: TScoreType = "married";
-        const single: TScoreType = "single";
 
-        if (!criteria)
-            return response.status(400).json({ message: 'Invalid request.' });
-
-        if (!Array.isArray(criteria))
-            return response.status(400).json({ message: 'Invalid request.' })
-
-        if (!status)
-            return response.status(400).json({ message: 'Invalid request' });
-
-        if (status != married && status != single)
-            return response.status(400).json({ message: 'Invalid request.' });
-
-        const result = criteria.map(
-            (criteriaId) =>
-                scores.filter(
-                    (score) => score.criteria?.id === criteriaId && score.type === status
-                )
-        );
+        const result = await this.listResultsUseCase.execute(status as TScoreType, criteria as typeof Criteria.prototype.id[])
 
         return response.json(result);
     };

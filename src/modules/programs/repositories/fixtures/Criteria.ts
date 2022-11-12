@@ -1,10 +1,15 @@
 import { v4 } from "uuid";
 
+import { Exam, TExamLanguage } from "../../../clbs/models/Exam";
+import { getExamsByLanguage } from "../../../clbs/repositories/fixtures/Exams";
 import { Criteria } from "../../models/Criteria";
 import { Factor } from "../../models/Factor";
 import { getFactorByAlias } from "./Factors";
 
 const criteria = async (): Promise<Criteria[]> => {
+
+    const englishExams: Exam[] | undefined = getExamsByLanguage('en');
+    const frenchExams: Exam[] | undefined = getExamsByLanguage('fr');
 
     const ageFactor = getFactorByAlias('age');
     const educationFactor = getFactorByAlias('education');
@@ -40,6 +45,7 @@ const criteria = async (): Promise<Criteria[]> => {
             id: "4e74f6e3-1350-4f90-8e0d-dd79c1a7d145",
             label: "CLB 4",
             allPrograms: true,
+            languageExamApplicable: englishExams,
             combined: true,
             factors: [
                 firstOfficialLanguageFactor,
@@ -52,6 +58,7 @@ const criteria = async (): Promise<Criteria[]> => {
             label: "NCLC 4 (CLB 4)",
             allPrograms: true,
             combined: true,
+            languageExamApplicable: frenchExams,
             factors: [
                 firstOfficialLanguageFactor,
                 secondOfficialLanguageFactor
@@ -63,6 +70,7 @@ const criteria = async (): Promise<Criteria[]> => {
             label: "CLB 7",
             allPrograms: true,
             combined: true,
+            languageExamApplicable: englishExams,
             factors: [
                 firstOfficialLanguageFactor,
                 secondOfficialLanguageFactor
@@ -74,6 +82,7 @@ const criteria = async (): Promise<Criteria[]> => {
             label: "NCLC 7 (CLB 7)",
             allPrograms: true,
             combined: true,
+            languageExamApplicable: frenchExams,
             factors: [
                 firstOfficialLanguageFactor,
                 secondOfficialLanguageFactor
@@ -85,6 +94,7 @@ const criteria = async (): Promise<Criteria[]> => {
             label: "CLB 8",
             allPrograms: true,
             combined: true,
+            languageExamApplicable: englishExams,
             factors: [
                 firstOfficialLanguageFactor,
                 secondOfficialLanguageFactor
@@ -96,6 +106,7 @@ const criteria = async (): Promise<Criteria[]> => {
             label: "NCLC 8 (CLB 8)",
             allPrograms: true,
             combined: true,
+            languageExamApplicable: frenchExams,
             factors: [
                 firstOfficialLanguageFactor,
                 secondOfficialLanguageFactor
@@ -107,6 +118,7 @@ const criteria = async (): Promise<Criteria[]> => {
             label: "CLB 9",
             allPrograms: true,
             combined: true,
+            languageExamApplicable: englishExams,
             factors: [
                 firstOfficialLanguageFactor,
                 secondOfficialLanguageFactor
@@ -118,6 +130,7 @@ const criteria = async (): Promise<Criteria[]> => {
             label: "NCLC 9 (CLB 9)",
             allPrograms: true,
             combined: true,
+            languageExamApplicable: frenchExams,
             factors: [
                 firstOfficialLanguageFactor,
                 secondOfficialLanguageFactor

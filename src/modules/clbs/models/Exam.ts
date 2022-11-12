@@ -1,7 +1,11 @@
+
+type TExamLanguage = "en" | "fr";
+
 class Exam {
     id?: string;
     name: string;
-    language: string;
+    language: TExamLanguage;
+    grades: number[];
 }
 
-export { Exam };
+export { Exam, TExamLanguage };
