@@ -8,8 +8,6 @@ class Program {
     name: string;
     initials: string;
     province: Province;
-    // criteria: Criteria[];
-    // created_at: Date;
 
     constructor() {
         if (!this.id) {

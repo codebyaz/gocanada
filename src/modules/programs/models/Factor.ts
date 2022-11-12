@@ -1,5 +1,9 @@
 class Factor {
     id?: string;
     label: string;
-    // category: Category;
+    alias: string;
+    isSpouseFactor: boolean;
+    order: number;
 }
+
+export { Factor };

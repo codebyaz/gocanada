@@ -1,13 +1,11 @@
-import { Program } from "./Program";
+import { Factor } from "./Factor";
 
 class Criteria {
     id?: string;
     label: string;
-    common: boolean;
+    allPrograms: boolean;
     alias: string;
-    // noc: Noc
-    // clb: Clb; 
-    // created_at: Date;
+    factors: Factor[] | undefined[]
 }
 
 export { Criteria };

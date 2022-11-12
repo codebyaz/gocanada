@@ -1,5 +1,5 @@
 import Container from "typedi";
-import { Province } from "../../../provinces/models/Province";
+import { v4 } from "uuid";
 
 import { FindProvincesByNameUseCase } from "../../../provinces/useCases/FindProvincesByNameUseCase";
 import { Program } from "../../models/Program";
@@ -13,22 +13,22 @@ const programs = async (): Promise<Program[]> => {
 
     const programs = [
         {
-            "id": "563569f0-65ac-4a57-bf0a-3d8f49873f06",
-            "name": "Federal Skilled Worker",
-            "initials": "FSW",
-            "province": federalProvince,
+            id: "5aad7350-661f-42c3-b681-4386dd4f10df",
+            name: "Federal Skilled Worker",
+            initials: "FSW",
+            province: federalProvince,
         },
         {
-            "id": "2bb315f9-30f7-4a94-83a9-0f508ef57e2d",
-            "name": "Canadian Experience Class",
-            "initials": "CEC",
-            "province": federalProvince,
+            id: "d6400cf6-bc55-49d0-b0ed-0135a4aaa5af",
+            name: "Canadian Experience Class",
+            initials: "CEC",
+            province: federalProvince,
         },
         {
-            "id": "64802f3e-f5f1-47c5-bf80-548d656de4c5",
-            "name": "Arrima",
-            "initials": "ARR",
-            "province": quebecProvince,
+            id: "df3e645e-453e-4af1-a571-3159dcb81059",
+            name: "Arrima",
+            initials: "ARR",
+            province: quebecProvince,
         }
     ]
 

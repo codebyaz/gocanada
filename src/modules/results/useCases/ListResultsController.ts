@@ -1,9 +1,8 @@
 
 import { Request, Response } from "express";
 import { Service } from "typedi";
-import { Criteria } from "../../programs/models/Criteria";
-import { Score } from "../../programs/models/Score";
 
+import { Score, TScoreType } from "../../programs/models/Score";
 import { scores as data } from "../../programs/repositories/fixtures/Scores";
 
 @Service()
@@ -11,19 +10,28 @@ class ListResultsController {
     constructor() { }
 
     async handle(request: Request, response: Response) {
-        const criteria = request.body;
-
+        const { status, criteria } = request.query;
         const scores = await data();
-        const result: Score[] | any = [];
+        const married: TScoreType = "married";
+        const single: TScoreType = "single";
 
-        criteria.map(
-            (criteria: Criteria) => {
-                const foundScores: Score[] | undefined = scores.filter(
-                    (score) => score.criteria?.id === criteria.id
-                );
+        if (!criteria)
+            return response.status(400).json({ message: 'Invalid request.' });
 
-                result.push(foundScores);
-            }
+        if (!Array.isArray(criteria))
+            return response.status(400).json({ message: 'Invalid request.' })
+
+        if (!status)
+            return response.status(400).json({ message: 'Invalid request' });
+
+        if (status != married && status != single)
+            return response.status(400).json({ message: 'Invalid request.' });
+
+        const result = criteria.map(
+            (criteriaId) =>
+                scores.filter(
+                    (score) => score.criteria?.id === criteriaId && score.type === status
+                )
         );
 
         return response.json(result);
