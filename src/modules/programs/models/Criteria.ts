@@ -5,6 +5,7 @@ class Criteria {
     id?: string;
     label: string;
     allPrograms: boolean;
+    combined: boolean;
     languageExamApplicable?: Exam[] | undefined;
     alias: string;
     factors: Factor[] | undefined[]

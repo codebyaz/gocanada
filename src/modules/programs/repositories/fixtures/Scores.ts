@@ -15,6 +15,7 @@ const scores = async (): Promise<Score[]> => {
     const findCriteriaByAliasUseCase = Container.get(FindCriteriaByAlias);
     const highSchoolCriteria = await findCriteriaByAliasUseCase.execute("highSchool");
     const lessThanHighSchool = await findCriteriaByAliasUseCase.execute("lessThanHighSchool");
+    const clb8 = await findCriteriaByAliasUseCase.execute("clb8");
     const clb9 = await findCriteriaByAliasUseCase.execute("clb9");
 
     const findProgramsByInitialsUseCase = Container.get(FindProgramsByInitialsUseCase);
@@ -57,6 +58,13 @@ const scores = async (): Promise<Score[]> => {
             value: 30,
             type: single,
             criteria: highSchoolCriteria,
+            program: federalSkilledWorkerProgram
+        },
+        {
+            id: "5aad7350-661f-42c3-b681-4386dd4f10df",
+            value: 128,
+            type: married,
+            criteria: clb8,
             program: federalSkilledWorkerProgram
         },
         {

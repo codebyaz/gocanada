@@ -29,7 +29,7 @@ const combinedScores = async (): Promise<CombinedScore[]> => {
             criteria: [highSchoolCriteria, clb7Fr] as Criteria[]
         },
         {
-            id: v4(),
+            id: "a13709cd-1d52-41b0-8914-ac895e23c15e",
             value: 25,
             criteria: [highSchoolCriteria, clb8] as Criteria[]
         },
