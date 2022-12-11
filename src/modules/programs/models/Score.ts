@@ -9,7 +9,6 @@ class Score {
     value: number;
     type: TScoreType;
     criteria: Criteria | undefined;
-    factor: Factor | undefined;
     program: Program | undefined;
 }
 

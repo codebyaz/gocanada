@@ -30,7 +30,6 @@ const scores = async (): Promise<Score[]> => {
             value: 0,
             type: married,
             criteria: lessThanHighSchool,
-            factor: foreignEducationFactor,
             program: federalSkilledWorkerProgram,
         },
         {
@@ -38,7 +37,6 @@ const scores = async (): Promise<Score[]> => {
             value: 0,
             type: single,
             criteria: lessThanHighSchool,
-            factor: foreignEducationFactor,
             program: federalSkilledWorkerProgram,
         },
         {
