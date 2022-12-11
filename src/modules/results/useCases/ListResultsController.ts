@@ -12,7 +12,7 @@ class ListResultsController {
 
     async handle(request: Request, response: Response) {
         const { status, criteria } = request.query;
-
+        console.log(status, criteria);
         const result = await this.listResultsUseCase.execute(status as TScoreType, criteria as typeof Criteria.prototype.id[])
 
         return response.json(result);

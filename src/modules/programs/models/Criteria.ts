@@ -8,7 +8,7 @@ class Criteria {
     combined: boolean;
     languageExamApplicable?: Exam[] | undefined;
     alias: string;
-    factors: Factor[] | undefined[]
+    factor: Factor | undefined
 }
 
 export { Criteria };

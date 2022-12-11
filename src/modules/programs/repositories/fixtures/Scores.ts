@@ -20,9 +20,9 @@ const scores = async (): Promise<Score[]> => {
 
     const findProgramsByInitialsUseCase = Container.get(FindProgramsByInitialsUseCase);
     const federalSkilledWorkerProgram = await findProgramsByInitialsUseCase.execute("FSW");
-    const ArrimaProgram = await findProgramsByInitialsUseCase.execute("ARR");
+    const arrimaProgram = await findProgramsByInitialsUseCase.execute("ARR");
 
-    const educationFactor = getFactorByAlias('education');
+    const foreignEducationFactor = getFactorByAlias('foreignEducation');
 
     const scores = [
         {
@@ -30,6 +30,7 @@ const scores = async (): Promise<Score[]> => {
             value: 0,
             type: married,
             criteria: lessThanHighSchool,
+            factor: foreignEducationFactor,
             program: federalSkilledWorkerProgram,
         },
         {
@@ -37,6 +38,7 @@ const scores = async (): Promise<Score[]> => {
             value: 0,
             type: single,
             criteria: lessThanHighSchool,
+            factor: foreignEducationFactor,
             program: federalSkilledWorkerProgram,
         },
         {
@@ -44,7 +46,7 @@ const scores = async (): Promise<Score[]> => {
             value: 0,
             type: spouse,
             criteria: lessThanHighSchool,
-            program: ArrimaProgram,
+            program: arrimaProgram,
         },
         {
             id: "209c3a86-20a8-4cfb-a10f-41bdc0bad1dc",

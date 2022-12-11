@@ -10,25 +10,25 @@ const exams = (): Exam[] => {
     const exams = [
         {
             id: "5c306d83-b806-4bb5-9c76-c421a43861cb",
-            name: "CELPIP",
+            name: "CELPIP (English exam)",
             language: english,
             grades: []
         },
         {
             id: "b0a52e90-2ca8-42b2-a4ca-ead4546c5ae1",
-            name: "IELTS",
+            name: "IELTS (English exam)",
             language: english,
             grades: []
         },
         {
-            id: v4(),
-            name: "TEF Canada",
+            id: "3f6a6482-d0a3-49a9-9a08-10072ecc46e8",
+            name: "TEF Canada (French exam)",
             language: french,
             grades: []
         },
         {
-            id: v4(),
-            name: "TCF Canada",
+            id: "eb494af5-872b-48dd-b8e2-349c17eeaecc",
+            name: "TCF Canada (French exam)",
             language: french,
             grades: []
         }

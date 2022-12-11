@@ -3,7 +3,7 @@ class Factor {
     label: string;
     alias: string;
     isSpouseFactor: boolean;
-    order: number;
+    group?: number;
 }
 
 export { Factor };
